@@ -1,0 +1,36 @@
+{
+  "name": "hexo-enhancer",
+  "version": "1.0.0",
+  "description": "feature enhancer for hexo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sisyphsu/hexo-enhancer.git"
+  },
+  "keywords": [
+    "hexo",
+    "link",
+    "permalink",
+    "categories",
+    "tags",
+    "title",
+    "date"
+  ],
+  "author": "sisyphsu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sisyphsu/hexo-enhancer/issues"
+  },
+  "homepage": "https://github.com/sisyphsu/hexo-enhancer#readme",
+  "dependencies": {
+    "base-x": "^3.0.5",
+    "hexo-front-matter": "^0.2.3",
+    "hexo-fs": "^0.2.2",
+    "md5": "^2.2.1",
+    "moment-timezone": "^0.5.23",
+    "node-crc": "^1.2.2"
+  }
+}
