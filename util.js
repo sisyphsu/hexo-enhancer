@@ -6,13 +6,14 @@ const base62 = basex("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV
 const base32 = basex("0123456789ABCDEFGHJKMNPQRSTVWXYZ");
 const reg = /^(\d{4})-?(\d{2})-?(\d{2})-(.*)$/;
 
+// copy from hexo
 function toMoment(value) {
     if (moment.isMoment(value)) return moment(value._d);
     return moment(value);
 }
 
 /**
- * 自定义哈希函数, 将MD5进行base62编码然后返回前10个字符
+ * custom hash, based on md5+base62
  * @param str
  * @returns {string}
  */
@@ -24,7 +25,7 @@ module.exports.hash = function (str) {
 };
 
 /**
- * 计算字符串的crc64签名
+ * Calculate crc64 of `str`, with base32 format.
  * @param str
  * @returns {string|*}
  */
@@ -34,7 +35,7 @@ module.exports.crc64 = function (str) {
 };
 
 /**
- * 计算字符串的crc32签名
+ * Calculate crc32 of `str`, with base32 format.
  * @param str
  * @returns {string|*}
  */
@@ -44,10 +45,12 @@ module.exports.crc32 = function (str) {
 };
 
 /**
- * 解析source, 提取可能存在的日期
+ * Parse post's source, pick up `title` and `date` field
  * @param src
+ * @return Object
  */
 module.exports.parseSource = function (src) {
+    // TODO seperator
     if (src.lastIndexOf("/") >= 0) {
         src = src.substring(src.lastIndexOf("/") + 1);
     }
