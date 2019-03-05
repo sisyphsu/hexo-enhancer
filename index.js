@@ -30,7 +30,7 @@ function filterPost(log, data) {
         log.i("Generate abbrlink [%s] for post [%s]", data.abbrlink, data.source);
     }
 
-    if (metadata.categories.length) {
+    if (!data.categories && data.categories.length && metadata.categories.length) {
         data.setCategories(metadata.categories);
         log.i("Generate categories [%s] for post [%s]", metadata.categories, data.source);
     }
@@ -38,6 +38,11 @@ function filterPost(log, data) {
     if (tags.length) {
         let matchedTags = util.matchTags(data.raw, tags);
         if (matchedTags.length) {
+            data.tags.forEach(tag => {
+                if (matchedTags.indexOf(tag) < 0) {
+                    matchedTags.push(tag.name);
+                }
+            });
             data.setTags(matchedTags);
             log.i("Generate tags [%s] for post [%s]", matchedTags, data.source);
         }
