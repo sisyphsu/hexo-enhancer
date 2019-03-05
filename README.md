@@ -58,14 +58,16 @@ The format is really flexible:
 
 If you are familiar with `Regexp`, you will know how flexible it is:
 
->20091010-Title.md
+```
+20091010-Title.md
 2009-10-10_Title.md
 2009-10-10-Title.md
 2009/10/10#Title.md
 2009/10/10@Title.md
+[20091010]-Title.md
 【20091010】Title.md
 「20091010」-Title.md
-[20091010]-Title.md
+```
 
 All filenames above is fine, `hexo-enhancer` will parse it into:
 
