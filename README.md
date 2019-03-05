@@ -15,6 +15,7 @@ This plugin support multiple helpful features as blow (**by now**):
 For example, without this plugin, you need write MarkDown like this:
 
 ```markdown
+
 ---
 title: Title
 date: 2019-03-05 12:54:57
@@ -25,14 +26,17 @@ tags: [tag1, tag2]
 # Title
 
 This is a markdown file, in categories [A, B], with tags [tag1, tag2].  
+
 ```
 
 With this graceful plugin, you don't need write boring `Front-matter` anymore.
 
 ```markdown
+
 # Title
 
 This is a markdown file, in categories [A, B], with tags [tag1, tag2].
+
 ```
 
 ## Installation
@@ -72,11 +76,13 @@ If you are familiar with `Regexp`, you will know how flexible it is:
 All filenames above is fine, `hexo-enhancer` will parse it into:
 
 ```markdown
+
 ---
 title: Title
 date: 2009-10-10
 ---
 
+```
 ## Usage - `categories`
 
 For `categories`, you should put your `.md` file in right directory with right name, `hexo-enhancer` will use the directory name as `categories`, 
