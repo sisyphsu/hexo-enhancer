@@ -26,11 +26,14 @@
   },
   "homepage": "https://github.com/sisyphsu/hexo-enhancer#readme",
   "dependencies": {
-    "base-x": "^3.0.5",
     "hexo-front-matter": "^0.2.3",
     "hexo-fs": "^0.2.2",
+    "base-x": "^3.0.5",
     "md5": "^2.2.1",
     "moment-timezone": "^0.5.23",
     "node-crc": "^1.2.2"
+  },
+  "devDependencies": {
+    "@types/moment-timezone": "^0.5.10"
   }
 }

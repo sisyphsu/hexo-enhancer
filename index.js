@@ -1,35 +1,53 @@
-'use strict';
-
 const util = require("./util");
 
+// prepare tags by `hexo.config.enhancer.tags` and `hexo.config.keywords`
+const tags = [];
+util.parseTags(hexo.config.keywords, tags);
+hexo.config.enhancer && util.parseTags(hexo.config.enhancer.tags, tags);
+console.log("Prepare tags: %s", tags);
+
 /**
- * 过滤POST, 自动处理title、date、abbrlink属性
+ * fitler hexo's post, auto generate `title`, `date`, `abbrlink`
+ *
  * @param log
  * @param data
  */
 function filterPost(log, data) {
     let metadata = util.parseSource(data.source);
-    // 自动分配title
-    if (!data.title && metadata.title) {
+
+    if (!data.title) {
         data.title = metadata.title;
-    }
-    // 自动分配date
-    if (metadata.date) {
-        data.date = metadata.date;
+        log.i("Generate title [%s] for post [%s]", metadata.title, data.source);
     }
 
-    // 分配addrlink
+    if (metadata.date) {
+        data.date = metadata.date;
+        log.i("Generate date [%s] for post [%s]", metadata.date, data.source);
+    }
+
     if (!data.abbrlink) {
-        if (!data.title) {
-            log.w("No title found for post [%s]", data.slug);
-        }
         data.abbrlink = util.crc32(data.title);
-        log.i("Generate link %s for post [%s]", data.abbrlink, data.title);
+        log.i("Generate abbrlink [%s] for post [%s]", data.abbrlink, data.source);
+    }
+
+    if (metadata.categories.length) {
+        data.setCategories(metadata.categories);
+        log.i("Generate categories [%s] for post [%s]", metadata.categories, data.source);
+    }
+
+    if (tags.length) {
+        let matchedTags = util.matchTags(data.raw, tags);
+        if (matchedTags.length) {
+            data.setTags(matchedTags);
+            log.i("Generate tags [%s] for post [%s]", matchedTags, data.source);
+        }
     }
 }
 
 hexo.extend.filter.register('before_post_render', function (data) {
+    let log = this.log;
     if (data.layout === 'post') {
+        initTags(log);
         filterPost(this.log, data);
     }
     return data;
