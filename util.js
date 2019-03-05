@@ -60,9 +60,9 @@ module.exports.parseSource = function (src) {
     if (parts.length > 0) {
         let filename = parts[parts.length - 1];
         if (filename.indexOf(".") >= 0) {
-            filename = filename.substring(0, src.indexOf("."));
+            filename = filename.substring(0, filename.indexOf("."));
         }
-        let match = src.match(reg);
+        let match = filename.match(reg);
         if (match) {
             date = toMoment(`${match[1]}-${match[2]}-${match[3]}`);
             title = match[4];
@@ -104,7 +104,7 @@ module.exports.matchTags = function (src, tags) {
  * @param {Array} tgt
  */
 module.exports.parseTags = function (src, tgt) {
-    src.split(/,;/).forEach(tag => {
+    src.split(',').forEach(tag => {
         tag = tag.trim();
         if (tag && tgt.indexOf(tag) < 0) {
             tgt.push(tag);

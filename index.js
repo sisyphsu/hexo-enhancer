@@ -45,9 +45,7 @@ function filterPost(log, data) {
 }
 
 hexo.extend.filter.register('before_post_render', function (data) {
-    let log = this.log;
     if (data.layout === 'post') {
-        initTags(log);
         filterPost(this.log, data);
     }
     return data;
