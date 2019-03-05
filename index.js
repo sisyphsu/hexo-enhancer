@@ -4,9 +4,8 @@ const util = require("./util");
 
 // prepare tags by `hexo.config.enhancer.tags` and `hexo.config.keywords`
 const tags = [];
+util.parseTags(hexo.config.tags, tags);
 util.parseTags(hexo.config.keywords, tags);
-hexo.config.enhancer && util.parseTags(hexo.config.enhancer.tags, tags);
-console.log("Prepare tags: %s", tags);
 
 /**
  * fitler hexo's post, auto generate `title`, `date`, `abbrlink`
