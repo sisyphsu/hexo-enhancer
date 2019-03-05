@@ -73,12 +73,10 @@ If you are familiar with `Regexp`, you will know how flexible it is:
 All filenames above is fine, `hexo-enhancer` will parse it into:
 
 ```markdown
-
 ---
 title: Title
 date: 2009-10-10
 ---
-
 ```
 ## Usage - `categories`
 
