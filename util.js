@@ -7,8 +7,8 @@ const basex = require('base-x');
 const base62 = basex("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
 const base32 = basex("0123456789ABCDEFGHJKMNPQRSTVWXYZ");
 const reg = /^.?(\d{4})[-_]?(\d{2})[-_]?(\d{2}).?[-_.@# ]*(.*)$/;
-const postDir = '_posts/';
-const draftDir = '_drafts/';
+const postDir = '_posts';
+const draftDir = '_drafts';
 
 // copy from hexo
 function toMoment(value) {

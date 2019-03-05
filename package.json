@@ -1,6 +1,6 @@
 {
   "name": "hexo-enhancer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a feature enhancer for hexo, support abbrlink, auto-title, auto-date, auto-categories, auto-tags...",
   "main": "index.js",
   "scripts": {
