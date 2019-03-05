@@ -58,23 +58,31 @@ The format is really flexible:
 
 If you are familiar with `Regexp`, you will know how flexible it is:
 
-```
-20091010-Title.md
+>20091010-Title.md
 2009-10-10_Title.md
 2009-10-10-Title.md
 2009/10/10#Title.md
 2009/10/10@Title.md
-[20091010]-Title.md
 【20091010】Title.md
 「20091010」-Title.md
-```
+[20091010]-Title.md
 
-All filenames above is fine, `hexo-enhancer` will parse it into `date: 2009-10-10` and `title: Title`.
+All filenames above is fine, `hexo-enhancer` will parse it into:
+
+```markdown
+---
+title: Title
+date: 2009-10-10
+---
 
 ## Usage - `categories`
 
 For `categories`, you should put your `.md` file in right directory with right name, `hexo-enhancer` will use the directory name as `categories`, 
-which means `_posts/problom-record/Java/20091010-Title.md` will has `categories: [problom-record, Java]`;
+which means `_posts/problom-record/Java/20091010-Title.md` will has:
+
+```markdown
+categories: [problom-record, Java]
+```
 
 ## Usage - `tags`
 
