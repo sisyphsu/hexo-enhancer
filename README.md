@@ -84,7 +84,9 @@ For `categories`, you should put your `.md` file in right directory with right n
 which means `_posts/problom-record/Java/20091010-Title.md` will has:
 
 ```markdown
+---
 categories: [problom-record, Java]
+---
 ```
 
 ## Usage - `tags`
