@@ -1,6 +1,6 @@
 {
   "name": "hexo-enhancer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a feature enhancer for hexo, support abbrlink, auto-title, auto-date, auto-categories, auto-tags...",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,7 @@
   "homepage": "https://github.com/sisyphsu/hexo-enhancer#readme",
   "dependencies": {
     "hexo-front-matter": "^0.2.3",
-    "hexo-fs": "^0.2.2",
+    "hexo-fs": "^1.0.2",
     "base-x": "^3.0.5",
     "md5": "^2.2.1",
     "moment-timezone": "^0.5.23",
