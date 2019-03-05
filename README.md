@@ -113,7 +113,7 @@ permalink: :year/:abbrlink.html
 # permalink: :year/:month/:day/:abbrlink.html
 ```
 
-With abbrlink, your post's url will really clean, like `https://sulin.me/2018/3055NXV.html`
+With abbrlink, your post's url will really clean, like `https://sulin.me/2019/Z726F8.html`
 
 ## License
 
