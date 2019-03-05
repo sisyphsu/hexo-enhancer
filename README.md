@@ -15,7 +15,6 @@ This plugin support multiple helpful features as blow (**by now**):
 For example, without this plugin, you need write MarkDown like this:
 
 ```markdown
-
 ---
 title: Title
 date: 2019-03-05 12:54:57
@@ -32,11 +31,9 @@ This is a markdown file, in categories [A, B], with tags [tag1, tag2].
 With this graceful plugin, you don't need write boring `Front-matter` anymore.
 
 ```markdown
-
 # Title
 
 This is a markdown file, in categories [A, B], with tags [tag1, tag2].
-
 ```
 
 ## Installation
