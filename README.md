@@ -2,6 +2,8 @@
 
 This is an feature enhancement plugin for `Hexo`.
 
+中文文档：https://sulin.me/2019/Z726F8.html
+
 ##  Introduction
 
 This plugin support multiple helpful features as blow (**by now**):
