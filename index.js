@@ -31,9 +31,17 @@ function filterPost(log, data) {
         log.i("Generate abbrlink [%s] for post [%s]", data.abbrlink, data.source);
     }
 
-    if (!data.categories && data.categories.length && metadata.categories.length) {
-        data.setCategories(metadata.categories);
-        log.i("Generate categories [%s] for post [%s]", metadata.categories, data.source);
+    if (metadata.categories.length) {
+        let categories = metadata.categories;
+        data.categories.forEach(item => {
+            if (typeof item === 'string') {
+                categories.push(item);
+            } else if (item.name) {
+                categories.push(item.name);
+            }
+        });
+        data.setCategories(categories);
+        log.i("Generate categories [%s] for post [%s]", categories, data.source);
     }
 
     if (tags.length) {
