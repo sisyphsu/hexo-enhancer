@@ -1,3 +1,5 @@
+'use strict';
+
 const util = require("./util");
 
 // prepare tags by `hexo.config.enhancer.tags` and `hexo.config.keywords`
