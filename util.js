@@ -1,6 +1,6 @@
 const path = require("path");
 const moment = require('moment-timezone');
-const crc = require('node-crc');
+const crc32 = require('buffer-crc32');
 const md5 = require('md5');
 const basex = require('base-x');
 
@@ -29,22 +29,12 @@ module.exports.hash = function (str) {
 };
 
 /**
- * Calculate crc64 of `str`, with base32 format.
- * @param {string} str
- * @returns {string|*}
- */
-module.exports.crc64 = function (str) {
-    let buf = crc.crc64(Buffer.from(str));
-    return base32.encode(buf);
-};
-
-/**
  * Calculate crc32 of `str`, with base32 format.
  * @param {string} str
  * @returns {string|*}
  */
 module.exports.crc32 = function (str) {
-    let buf = crc.crc32(Buffer.from(str));
+    let buf = crc32(Buffer.from(str));
     return base32.encode(buf);
 };
 

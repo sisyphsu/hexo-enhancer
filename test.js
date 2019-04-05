@@ -10,7 +10,7 @@ const util = require('./util');
 
 console.log(util.parseSource("_posts/寅花晨拾/20111027-object file not found.md"));
 
-console.log(util.crc64("1234567890asdfghjkl"));
+console.log(util.crc32("1234567890asdfghjkl"));
 
 let tags = [];
 util.parseTags("Linux, Mac, Shell, HTML", tags);
