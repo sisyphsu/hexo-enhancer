@@ -80,11 +80,13 @@ module.exports.parseSource = function (src) {
  */
 module.exports.matchTags = function (src, tags) {
     let result = [];
-    tags.forEach(tag => {
-        if (src.indexOf(tag) > 0) {
-            result.push(tag);
-        }
-    });
+    if (src && tags) {
+        tags.forEach(tag => {
+            if (src.indexOf(tag) > 0) {
+                result.push(tag);
+            }
+        });
+    }
     return result;
 };
 
@@ -94,10 +96,12 @@ module.exports.matchTags = function (src, tags) {
  * @param {Array} tgt
  */
 module.exports.parseTags = function (src, tgt) {
-    src.split(',').forEach(tag => {
-        tag = tag.trim();
-        if (tag && tgt.indexOf(tag) < 0) {
-            tgt.push(tag);
-        }
-    });
+    if (src && tgt) {
+        src.split(',').forEach(tag => {
+            tag = tag.trim();
+            if (tag && tgt.indexOf(tag) < 0) {
+                tgt.push(tag);
+            }
+        });
+    }
 };
