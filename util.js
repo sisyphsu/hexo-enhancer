@@ -46,7 +46,7 @@ module.exports.crc32 = function (str) {
 module.exports.parseSource = function (src) {
     let title, date;
     let categories = [];
-    let parts = src.split(path.sep);
+    let parts = src.split("/");
     if (parts.length > 0) {
         let filename = parts[parts.length - 1];
         if (filename.indexOf(".") >= 0) {
