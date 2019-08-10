@@ -33,13 +33,7 @@ function filterPost(log, data) {
 
     if (metadata.categories.length) {
         let categories = metadata.categories;
-        data.categories.forEach(item => {
-            if (typeof item === 'string') {
-                categories.push(item);
-            } else if (item.name) {
-                categories.push(item.name);
-            }
-        });
+        categories.reverse();
         data.setCategories(categories);
         log.i("Generate categories [%s] for post [%s]", categories, data.source);
     }
