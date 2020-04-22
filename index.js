@@ -56,6 +56,10 @@ function filterPost(log, data) {
             log.i("Generate tags [%s] for post [%s]", matchedTags, data.source);
         }
     }
+
+    if (src && src.indexOf('$') >= 0) {
+        data.mathjax = true
+    }
 }
 
 hexo.extend.filter.register('before_post_render', function (data) {

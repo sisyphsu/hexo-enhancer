@@ -81,8 +81,9 @@ module.exports.parseSource = function (src) {
 module.exports.matchTags = function (src, tags) {
     let result = [];
     if (src && tags) {
+        let lowerSrc = src.toLowerCase();
         tags.forEach(tag => {
-            if (src.indexOf(tag) > 0) {
+            if (lowerSrc.indexOf(tag.toLowerCase()) > 0) {
                 result.push(tag);
             }
         });
