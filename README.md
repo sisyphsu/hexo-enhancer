@@ -102,6 +102,8 @@ tags: Java, Golang, React, Vue
 
 `hexo-enhancer` will scan your post file, auto allocate all tags which appreared in the markdown source.
 
+Tags are case insensitive.
+
 ## Usage - `abbrlink`
 
 `hexo-enhancer` will use `base32(crc32(title))` generate a short link for your post, you can use it in the `permlink`:
@@ -114,6 +116,13 @@ permalink: :year/:abbrlink.html
 ```
 
 With abbrlink, your post's url will really clean, like `https://sulin.me/2019/Z726F8.html`
+
+## New Features
+
+### 2020-04-22
+
+1. Tag searching case insensitive
+2. Automaticly add "mathjax: true" if src contains $
 
 ## License
 
