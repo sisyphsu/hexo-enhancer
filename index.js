@@ -57,8 +57,9 @@ function filterPost(log, data) {
         }
     }
 
-    if (src && src.indexOf('$') >= 0) {
-        data.mathjax = true
+    if (data.source && data.source.indexOf('$') >= 0) {
+        data.mathjax = true;
+        log.i("Generate mathjax [true] for post [%s]", data.source);
     }
 }
 
