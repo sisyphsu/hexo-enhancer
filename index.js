@@ -40,6 +40,7 @@ function filterPost(log, data) {
                 categories.push(item.name);
             }
         });
+        categories.reverse();
         data.setCategories(categories);
         log.i("Generate categories [%s] for post [%s]", categories, data.source);
     }
