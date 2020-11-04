@@ -1,6 +1,6 @@
 {
   "name": "hexo-enhancer",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "a feature enhancer for hexo, support abbrlink, auto-title, auto-date, auto-categories, auto-tags...",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,9 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:sisyphsu/hexo-enhancer.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "keywords": [
     "hexo",
