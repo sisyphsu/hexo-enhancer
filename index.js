@@ -62,6 +62,8 @@ function filterPost(log, data) {
         data.mathjax = true;
         log.i("Generate mathjax [true] for post [%s]", data.source);
     }
+
+    data.toc = true;
 }
 
 hexo.extend.filter.register('before_post_render', function (data) {
